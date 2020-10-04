@@ -1,0 +1,97 @@
+Since it is hard to put UML diagram in .txt file, I will try to describe it by text.
+I didn't put any private/public method or field in this readme to prevent
+grader overwhelming by words.
+
+This In this assignment, my previous test are not work well so I simply comment them. I have no time
+to fix them sorry about that!
+
+Main:
+    - EasyAnimator
+
+
+Controller:
+    - interface:
+        - IController
+
+    - Controller implement:
+        - AnimationController
+        - TextController
+
+
+
+Views:
+    - interface:
+        - IDrawingPanel
+        - IView
+
+    - interface implement:
+        - Drawing Panel (implement IDrawingPanel)
+        - Textual View  (implement IView)
+        - AnimationView (implement IView)
+
+    - ViewFactory
+
+
+Util:
+    - Interface:
+        - AnimationBuilder
+
+    - interface implement:
+        - MyAnimationBuilder (implement AnimationBuilder)
+
+    - AnimationReader
+
+
+
+Changes of model in this assignment:
+    - I comment most of the throw exception, and just return to end.
+    - change check overlap, becaause my previous overlap check will block many animation
+        that we actually want.
+    - I add a PerformByStep function to make animations change smooth.
+    - added a getShapeAtCurrFrame method and a getAnimationAtCurrFrame method.
+    - added a set canvas width and height method.
+    - added a getCanvasWidth and a getCanvasHeight methods.
+    - added getAllShapes method and a getAllAnimation method.
+    - I fix all toString functions. for shapes and animations I simply delete all time related info.
+        and will add those time related info to getStatus() directly. I did this is to make my view
+        and controller to generate output text view easier to set new time depend on user's speed
+        input.
+
+
+Model:
+
+Total files:
+    - 3 interface:
+        - IModel
+        - IShape
+        - IAnimation
+
+    - ModelImpl (implement IModel)
+
+    - IShape branch from ModelImpl:
+        - AbstractShape (implement IShape)
+            - helper classes:
+                - position  (helper class)
+                - size      (helper class)
+                - color     (helper class)
+                - TypeOfShape (helper Enum)
+            - extend AbstractShape:
+                - Rectangle (extend AbstractShape)
+                - Oval      (extend AbstractShape)
+
+    - IAnimation branch from ModelImpl:
+        - AbstractAnimation (implement IAnimation)
+            - helper class:
+                - TypeOfAnimation   (helper Enum)
+            - extend AbstractAnimation:
+                - move          (extend AbstractAnimation)
+                - changeColor   (extend AbstractAnimation)
+                - scale         (extend AbstractAnimation)
+
+    - 3 tests:
+        - test for IShape Interface
+        - test for IAnimation Interface
+        - test for ModelImpl
+
+    - readme.txt
+

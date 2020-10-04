@@ -1,0 +1,37 @@
+Since it is hard to put UML diagram in .txt file, I will try to describe it by text.
+I didn't put any private/public method or field in this readme to prevent
+grader overwhelming by words.
+
+Total files:
+    - 3 interface:
+        - IModel
+        - IShape
+        - IAnimation
+
+    - ModelImpl (implement IModel)
+
+    - IShape branch from ModelImpl:
+        - AbstractShape (implement IShape)
+            - helper classes:
+                - position  (helper class)
+                - size      (helper class)
+                - color     (helper class)
+                - TypeOfShape (helper Enum)
+            - extend AbstractShape:
+                - Rectangle (extend AbstractShape)
+                - Oval      (extend AbstractShape)
+
+    - IAnimation branch from ModelImpl:
+        - AbstractAnimation (implement IAnimation)
+            - helper class:
+                - TypeOfAnimation   (helper Enum)
+            - extend AbstractAnimation:
+                - move          (extend AbstractAnimation)
+                - changeColor   (extend AbstractAnimation)
+                - scale         (extend AbstractAnimation)
+
+    - 3 tests:
+        - test for IShape Interface
+        - test for IAnimation Interface
+        - test for ModelImpl
+
