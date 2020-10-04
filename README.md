@@ -5,12 +5,14 @@ Pictures and moving pictures (animations) can be used to succinctly and effectiv
 In this project we using Model-View-Controller architecture to build an application that helps to create simple but effective 2D animations from simple shapes (such as the below examples).
 #
 Examples of animation:
+#
 ![example1](image/night.gif)
 ![example2](image/big-bang-big-crunch.gif)
 ![example3](image/toh-5.gif)
 ![example4](image/smalldemo.gif)
 #
 Logic of Model-View-Controller design:
+#
 ![design](image/logic.jpg)
 
 
